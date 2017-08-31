@@ -3,6 +3,7 @@
 import matplotlib.pyplot as plt
 from prep_terrain_data import makeTerrainData
 from class_vis import prettyPicture
+from sklearn.svm import SVC
 
 features_train, labels_train, features_test, labels_test = makeTerrainData()
 
@@ -28,7 +29,13 @@ plt.show()
 ################################################################################
 
 
-### your code here!  name your classifier object clf if you want the 
+### your code here!  name your classifier object clf if you want the
+clf=SVC(kernel="rbf", C=100000.0)
+clf.fit(features_train, labels_train)
+
+print(clf.predict(features_test))
+
+print(clf.score(features_test, labels_test)) 
 ### visualization code (prettyPicture) to show you the decision boundary
 
 

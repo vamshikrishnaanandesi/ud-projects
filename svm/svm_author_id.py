@@ -12,6 +12,7 @@ import sys
 from time import time
 sys.path.append("../tools/")
 from email_preprocess import preprocess
+from sklearn.svm import SVC
 
 
 ### features_train and features_test are the features for the training
@@ -24,7 +25,12 @@ features_train, features_test, labels_train, labels_test = preprocess()
 
 #########################################################
 ### your code goes here ###
+clf=SVC(kernel="rbf", C=10000.0)
+clf.fit(features_train, labels_train)
 
+print(clf.predict(features_test))
+
+print(clf.score(features_test, labels_test))
 #########################################################
 
 
