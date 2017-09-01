@@ -3,7 +3,7 @@
 import matplotlib.pyplot as plt
 from prep_terrain_data import makeTerrainData
 from class_vis import prettyPicture
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn import tree
 from time import time
 
 features_train, labels_train, features_test, labels_test = makeTerrainData()
@@ -32,7 +32,7 @@ plt.show()
 
 ### your code here!  name your classifier object clf if you want the 
 ### visualization code (prettyPicture) to show you the decision boundary
-clf= KNeighborsClassifier(n_neighbors=30, weights='uniform', algorithm='auto', leaf_size=300)
+clf= tree.DecisionTreeClassifier(min_samples_split=50)
 t0 = time()
 clf.fit(features_train, labels_train)
 print "training time:", round(time()-t0, 3), "s"
