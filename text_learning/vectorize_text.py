@@ -4,7 +4,7 @@ import os
 import pickle
 import re
 import sys
-
+from time import time
 sys.path.append( "../tools/" )
 from parse_out_email_text import parseOutText
 
@@ -36,7 +36,7 @@ word_data = []
 ### can iterate your modifications quicker
 #temp_counter = 0
 
-
+t0 = time()
 for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
     for path in from_person:
         ### only look at first 200 emails when developing
@@ -71,6 +71,7 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
 print "emails processed"
 from_sara.close()
 from_chris.close()
+print "training time:", round(time()-t0, 3), "s"
 print word_data[152]
 
 pickle.dump( word_data, open("your_word_data.pkl", "w") )
