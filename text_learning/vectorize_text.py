@@ -51,11 +51,11 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
 	    text = parseOutText(email)
             ### use str.replace() to remove any instances of the words
             ### ["sara", "shackleton", "chris", "germani"]
-	    for signature_word in ["sara", "shackleton", "chris", "germani"]:
-		    text.replace(signature_word, "")
+	    for signature_word in ["sara", "shackleton", "chris", "germani",  "sshacklensf"]:
+		   text= text.replace(signature_word, "")
 
             ### append the text to word_data
-	    word_data.append(text.replace('\n', ' ').strip())
+	    word_data.append(text)
 
             ### append a 0 to from_data if email is from Sara, and 1 if email is from Chris
 	    if name == "sara":
@@ -88,7 +88,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer,CountVectorizer, Tfi
 vect = TfidfVectorizer( stop_words = "english", lowercase = True)
 
 #get transformed data
-vect.fit_transform(word_data)
+vect.fit(word_data)
 
 #transformer = TfidfTransformer()
 

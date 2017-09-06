@@ -40,7 +40,7 @@ def parseOutText(f):
 	for word in text_string.split():
 		word_list.append(stemmer.stem(word))
 
-	words = ' '.join(word_list)
+	words = " ".join(word_list)
 
 
 
