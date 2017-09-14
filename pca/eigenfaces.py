@@ -40,8 +40,7 @@ print "Total dataset size:"
 print "n_samples: %d" % n_samples
 print "n_features: %d" % n_features
 print "n_classes: %d" % n_classes
-ariel = []
-only_ariel = []
+
 ariel_final = []
 # my_list = [15,25]
 my_list = [10, 15, 25, 50, 100, 250]
