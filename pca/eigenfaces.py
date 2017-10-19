@@ -105,8 +105,8 @@ for i in ariel_final:
 # print(only_ariel)
 # for a in range(0, len(only_ariel)):
 # 	print(only_ariel[a][2])
-	# print classification_report(y_test, y_pred, target_names=target_names[0])
-	# print confusion_matrix(y_test, y_pred, labels=range(n_classes))
+print classification_report(y_test, y_pred, target_names=target_names[0])
+print confusion_matrix(y_test, y_pred, labels=range(n_classes))
 ###############################################################################
 # Qualitative evaluation of the predictions using matplotlib
 def plot_gallery(images, titles, h, w, n_row=3, n_col=4):
